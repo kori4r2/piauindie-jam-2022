@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyInput : AIInput {
+public class EnemyChasePlayerInput : AIInput {
     [SerializeField, Range(0f, 10f)] private float _stopDistance = 5f;
 
     [SerializeField] private float _attackInterval;

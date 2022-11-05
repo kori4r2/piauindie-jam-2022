@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 7739973134833658723}
   - component: {fileID: 7739973134833658720}
   - component: {fileID: 7739973134833658721}
-  - component: {fileID: 276212658318604824}
+  - component: {fileID: 4976248161092092298}
   - component: {fileID: 7547089035073894832}
   m_Layer: 3
-  m_Name: Enemy
+  m_Name: EnemyAttackWorker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &276212658318604824
+--- !u!114 &4976248161092092298
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,10 +142,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7739973134833658724}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e108d33f7bdbd8c4593796c41f65a31d, type: 3}
+  m_Script: {fileID: 11500000, guid: 43ec5c6643aee01d493056006ad0aaaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerRef: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
+  _playerRef: {fileID: 0}
+  workers: {fileID: 11400000, guid: 189de047803ff4104922ee6d3bb0559a, type: 2}
   _stopDistance: 3
   _attackInterval: 1
 --- !u!114 &7547089035073894832
@@ -165,5 +166,5 @@ MonoBehaviour:
   unitAttack:
     pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
     attackSpawnDistance: 0.5
-  _aiInput: {fileID: 276212658318604824}
+  _aiInput: {fileID: 4976248161092092298}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}

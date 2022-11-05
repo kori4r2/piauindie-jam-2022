@@ -746,7 +746,7 @@ Transform:
   m_LocalScale: {x: 20, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &716300378
 GameObject:
@@ -1110,7 +1110,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1067683381
 PrefabInstance:
@@ -1541,7 +1541,6 @@ MonoBehaviour:
   unitAttack:
     pool: {fileID: 11400000, guid: 17f0c3ef20033a77384fa7085aef0e97, type: 2}
     attackSpawnDistance: 0.5
-  moveSpeed: 5
   reference: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
 --- !u!50 &1433717896
 Rigidbody2D:
@@ -1627,7 +1626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1433717899
 BoxCollider2D:
@@ -1916,6 +1915,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   unitsToSpawn:
   - {fileID: 7547089035073894832, guid: f165fdd9624a9814897ef34da2d838fd, type: 3}
+  - {fileID: 7547089035073894832, guid: 1afc178619142e01bb96f3cc88800a1a, type: 3}
+  - {fileID: 7547089035073894832, guid: f165fdd9624a9814897ef34da2d838fd, type: 3}
   spawnPositions:
   - {x: -10.03, y: 0}
   - {x: 10.04, y: 0}
@@ -1937,7 +1938,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2057921228
 GameObject:
@@ -2137,7 +2138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6659707337122276332, guid: 3e2613bfed3672945964165efb328757, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6659707337122276332, guid: 3e2613bfed3672945964165efb328757, type: 3}
       propertyPath: m_LocalPosition.x
