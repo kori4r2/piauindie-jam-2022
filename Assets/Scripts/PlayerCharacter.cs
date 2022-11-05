@@ -2,25 +2,18 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerCharacter : Unit {
-    private CustomInputs customInputs;
+    private InputProcessor inputProcessor = new InputProcessor();
     [SerializeField] private PlayerVariable reference;
 
     protected override void Awake() {
         base.Awake();
         movable2D.AllowDynamicMovement();
-        customInputs = new CustomInputs();
+        inputProcessor.Init(ReadMovementInput, unitAttack.Attack);
     }
 
     private void OnEnable() {
-        customInputs.Enable();
-        AddInputCallbacks();
+        inputProcessor.Enable();
         reference.Value = this;
-    }
-
-    private void AddInputCallbacks() {
-        customInputs.Combat.Move.performed += ReadMovementInput;
-        customInputs.Combat.Move.started += ReadMovementInput;
-        customInputs.Combat.Move.canceled += ReadMovementInput;
     }
 
     private void ReadMovementInput(InputAction.CallbackContext context) {
@@ -28,15 +21,11 @@ public class PlayerCharacter : Unit {
     }
 
     private void OnDisable() {
-        customInputs.Disable();
-        RemoveInputCallbacks();
+        inputProcessor.Disable();
         if (reference.Value == this)
             reference.Value = null;
     }
 
-    private void RemoveInputCallbacks() {
-        customInputs.Combat.Move.performed -= ReadMovementInput;
-        customInputs.Combat.Move.started -= ReadMovementInput;
-        customInputs.Combat.Move.canceled -= ReadMovementInput;
+    public override void TakeDamage(int damage) {
     }
 }
