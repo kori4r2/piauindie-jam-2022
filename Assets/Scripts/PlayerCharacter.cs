@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerCharacter : Unit {
     private CustomInputs customInputs;
+    [SerializeField] private PlayerVariable reference;
 
     protected override void Awake() {
         base.Awake();
@@ -13,6 +14,7 @@ public class PlayerCharacter : Unit {
     private void OnEnable() {
         customInputs.Enable();
         AddInputCallbacks();
+        reference.Value = this;
     }
 
     private void AddInputCallbacks() {
@@ -28,6 +30,8 @@ public class PlayerCharacter : Unit {
     private void OnDisable() {
         customInputs.Disable();
         RemoveInputCallbacks();
+        if (reference.Value == this)
+            reference.Value = null;
     }
 
     private void RemoveInputCallbacks() {
