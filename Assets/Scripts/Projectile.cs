@@ -35,18 +35,18 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
     }
 
     private static bool TryDealDamage(Unit attacker, GameObject collisionObj) {
-        if (collisionObj.TryGetComponent(out Unit unit)) {
-            if (!CanDamage(attacker, unit))
+        if (collisionObj.TryGetComponent(out IDamageable target)) {
+            if (!CanDamage(attacker, target))
                 return false;
-            unit.TakeDamage(attacker.Stats.AttackPower);
+            target.TakeDamage(attacker.Stats.AttackPower);
             return true;
         }
         return false;
     }
 
-    private static bool CanDamage(Unit attacker, Unit target) {
+    private static bool CanDamage(Unit attacker, IDamageable target) {
         if (attacker is PlayerCharacter)
-            return target is not PlayerCharacter;
+            return !(target is PlayerCharacter);
         return false;
     }
 }
