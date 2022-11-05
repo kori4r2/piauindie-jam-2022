@@ -3,7 +3,6 @@ using UnityEngine;
 public class WorkerUnit : Unit {
     [SerializeField]
     private int _grantedXP;
-
     public int GrantedXP => _grantedXP;
 
     [SerializeField] protected AIInput _aiInput;
@@ -23,5 +22,8 @@ public class WorkerUnit : Unit {
 
     private void ReadMovementInput(Vector2 direction) {
         movementDirection = direction;
+    }
+
+    public override void TakeDamage(int damage) {
     }
 }
