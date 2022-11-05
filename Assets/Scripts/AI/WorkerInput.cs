@@ -8,11 +8,14 @@ public class WorkerInput : AIInput {
 
     private void Awake() {
         _nextWaypoint = FindClosestWaypoint();
+    }
+
+    private void OnEnable() {
         _unit = GetComponent<Unit>();
         _unit.OnDeath.AddListener(OnDeath);
     }
 
-    private void OnEnable() {
+    private void OnDisable() {
         _unit.OnDeath.RemoveListener(OnDeath);
     }
 
