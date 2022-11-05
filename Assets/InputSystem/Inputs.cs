@@ -25,6 +25,22 @@ public class @CustomInputs : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Vector2"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Click"",
+                    ""type"": ""Button"",
+                    ""id"": ""a73bddf3-fcd3-4f8a-95bd-476386da30ea"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""MousePosition"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""8cd9b4ba-561d-4455-86ff-46c229a6a0e7"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -137,6 +153,28 @@ public class @CustomInputs : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb16b7a4-73fe-4311-a507-07cc44c77820"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MouseKeyboard"",
+                    ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""998fb7d5-d889-4f72-958a-9bc4dd04841f"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""MouseKeyboard"",
+                    ""action"": ""MousePosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -163,6 +201,8 @@ public class @CustomInputs : IInputActionCollection, IDisposable
         // Combat
         m_Combat = asset.FindActionMap("Combat", throwIfNotFound: true);
         m_Combat_Move = m_Combat.FindAction("Move", throwIfNotFound: true);
+        m_Combat_Click = m_Combat.FindAction("Click", throwIfNotFound: true);
+        m_Combat_MousePosition = m_Combat.FindAction("MousePosition", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -213,11 +253,15 @@ public class @CustomInputs : IInputActionCollection, IDisposable
     private readonly InputActionMap m_Combat;
     private ICombatActions m_CombatActionsCallbackInterface;
     private readonly InputAction m_Combat_Move;
+    private readonly InputAction m_Combat_Click;
+    private readonly InputAction m_Combat_MousePosition;
     public struct CombatActions
     {
         private @CustomInputs m_Wrapper;
         public CombatActions(@CustomInputs wrapper) { m_Wrapper = wrapper; }
         public InputAction @Move => m_Wrapper.m_Combat_Move;
+        public InputAction @Click => m_Wrapper.m_Combat_Click;
+        public InputAction @MousePosition => m_Wrapper.m_Combat_MousePosition;
         public InputActionMap Get() { return m_Wrapper.m_Combat; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -230,6 +274,12 @@ public class @CustomInputs : IInputActionCollection, IDisposable
                 @Move.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
                 @Move.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
                 @Move.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnMove;
+                @Click.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnClick;
+                @Click.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnClick;
+                @Click.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnClick;
+                @MousePosition.started -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousePosition;
+                @MousePosition.performed -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousePosition;
+                @MousePosition.canceled -= m_Wrapper.m_CombatActionsCallbackInterface.OnMousePosition;
             }
             m_Wrapper.m_CombatActionsCallbackInterface = instance;
             if (instance != null)
@@ -237,6 +287,12 @@ public class @CustomInputs : IInputActionCollection, IDisposable
                 @Move.started += instance.OnMove;
                 @Move.performed += instance.OnMove;
                 @Move.canceled += instance.OnMove;
+                @Click.started += instance.OnClick;
+                @Click.performed += instance.OnClick;
+                @Click.canceled += instance.OnClick;
+                @MousePosition.started += instance.OnMousePosition;
+                @MousePosition.performed += instance.OnMousePosition;
+                @MousePosition.canceled += instance.OnMousePosition;
             }
         }
     }
@@ -253,5 +309,7 @@ public class @CustomInputs : IInputActionCollection, IDisposable
     public interface ICombatActions
     {
         void OnMove(InputAction.CallbackContext context);
+        void OnClick(InputAction.CallbackContext context);
+        void OnMousePosition(InputAction.CallbackContext context);
     }
 }
