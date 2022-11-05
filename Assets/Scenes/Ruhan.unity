@@ -1482,6 +1482,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Waypoint
       objectReference: {fileID: 0}
+    - target: {fileID: 5217473434378327231, guid: 3e2613bfed3672945964165efb328757, type: 3}
+      propertyPath: _drawGizmos
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6659707337122276332, guid: 3e2613bfed3672945964165efb328757, type: 3}
       propertyPath: m_RootOrder
       value: 5
