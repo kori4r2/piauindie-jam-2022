@@ -27,5 +27,11 @@ public class PlayerCharacter : Unit {
     }
 
     public override void TakeDamage(int damage) {
+        currentHP -= damage;
+        if (currentHP <= 0)
+            Die();
+    }
+
+    protected override void Die() {
     }
 }

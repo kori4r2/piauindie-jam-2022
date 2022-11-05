@@ -15,7 +15,7 @@ public class UnitAttack {
         if (pool == null)
             return;
         Vector2 thisUnitPosition = new Vector2(thisUnit.transform.position.x, thisUnit.transform.position.y);
-        Vector2 attackDirection = targetPosition - thisUnitPosition;
+        Vector2 attackDirection = (targetPosition - thisUnitPosition).normalized;
         Vector2 spawnLocation2D = thisUnitPosition + (attackSpawnDistance * attackDirection);
         Vector3 spawnLocation = new Vector3(spawnLocation2D.x, spawnLocation2D.y, thisUnit.transform.position.z);
         Projectile projectile = pool.Value.InstantiateObject(spawnLocation, Quaternion.FromToRotation(Vector2.up, attackDirection));
