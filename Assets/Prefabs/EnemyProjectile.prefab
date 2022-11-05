@@ -49,7 +49,7 @@ MonoBehaviour:
   rigidBody: {fileID: 6128742577580516929}
   pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
   destroyOnContact: 1
-  moveSpeed: 7
+  moveSpeed: 5
 --- !u!50 &6128742577580516929
 Rigidbody2D:
   serializedVersion: 4

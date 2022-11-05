@@ -9,6 +9,7 @@ public class GameSessionManager : MonoBehaviour {
 
     private void Awake() {
         _buildingPlaces = FindObjectsOfType<BuildingPlace>();
+        Time.timeScale = 1.0f;
     }
 
     private void Update() {

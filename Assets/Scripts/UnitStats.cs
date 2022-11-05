@@ -6,4 +6,6 @@ public class UnitStats : ScriptableObject {
     public int MaxHP => maxHP;
     [SerializeField] private int attackPower;
     public int AttackPower => attackPower;
+    [SerializeField, Range(0f, 20f)] private float moveSpeed = 5f;
+    public float MoveSpeed => moveSpeed;
 }
