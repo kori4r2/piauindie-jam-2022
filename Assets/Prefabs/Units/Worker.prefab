@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7547089035569156475}
   - component: {fileID: 7547089035569156476}
   - component: {fileID: 7547089035569156477}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Worker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,8 +151,9 @@ MonoBehaviour:
     pool: {fileID: 0}
     attackSpawnDistance: 0
   moveSpeed: 1
-  _grantedXP: 1
   _aiInput: {fileID: 7547089035569156477}
+  _runtimeSet: {fileID: 11400000, guid: 189de047803ff4104922ee6d3bb0559a, type: 2}
+  _grantedXP: 1
 --- !u!114 &7547089035569156477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +167,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerRef: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
+  _unit: {fileID: 7547089035569156476}
+  waypoints: {fileID: 11400000, guid: 8948d067af0ca9750a5bd6d76f86dbd9, type: 2}

@@ -46,7 +46,9 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
 
     private static bool CanDamage(Unit attacker, IDamageable target) {
         if (attacker is PlayerCharacter)
-            return !(target is PlayerCharacter);
+            return target is Enemy;
+        if (attacker is Enemy)
+            return !(target is Enemy);
         return false;
     }
 }

@@ -6,23 +6,30 @@ public class EnemyInput : AIInput {
     [SerializeField] private float _attackInterval;
     private float _attackTimer;
 
-    public void Update() {
-        MoveTowardsPlayer(out var reachedPlayer);
+    private void Awake() {
+        _attackTimer = _attackInterval;
+    }
 
-        _attackTimer -= Time.deltaTime;
+    public void Update() {
+        bool reachedPlayer = MoveTowardsPlayer();
         if (reachedPlayer == true) {
+            _attackTimer -= Time.deltaTime;
             HandleAttacking();
         }
     }
 
-    private void MoveTowardsPlayer(out bool reachedPlayer) {
-        reachedPlayer = false;
+    private bool MoveTowardsPlayer() {
+        if (_playerRef.Value == null) {
+            MovementPerformed.Invoke(Vector2.zero);
+            return false;
+        }
 
-        var playerPosition = _playerRef.Value.transform.position;
-        var offset = playerPosition - transform.position;
-        var direction = default(Vector2);
+        bool reachedPlayer = false;
 
-        // We keep moving while we're far away from the player
+        Vector3 playerPosition = _playerRef.Value.transform.position;
+        Vector3 offset = playerPosition - transform.position;
+        Vector2 direction = Vector2.zero;
+
         if (offset.magnitude > _stopDistance) {
             direction = offset.normalized;
         } else {
@@ -30,15 +37,15 @@ public class EnemyInput : AIInput {
         }
 
         MovementPerformed.Invoke(direction);
+        return reachedPlayer;
     }
 
     private void HandleAttacking() {
-        if(_attackTimer <= 0) {
-            _attackTimer = _attackInterval;
+        if (_attackTimer > 0)
+            return;
 
-            var playerPosition = _playerRef.Value.transform.position;
-            var direction = (playerPosition - transform.position).normalized;
-            AttackPerformed.Invoke(direction);
-        }
+        _attackTimer = _attackInterval;
+        Vector3 playerPosition = _playerRef.Value.transform.position;
+        AttackPerformed.Invoke(playerPosition);
     }
 }

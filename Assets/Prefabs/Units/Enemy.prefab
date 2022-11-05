@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7739973134833658721}
   - component: {fileID: 276212658318604824}
   - component: {fileID: 7547089035073894832}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -147,8 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerRef: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
   _stopDistance: 3
-  _attackInterval: 0
-  _attackTimer: 0
+  _attackInterval: 1
 --- !u!114 &7547089035073894832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +163,8 @@ MonoBehaviour:
   rigidBody: {fileID: 7739973134833658720}
   unitStats: {fileID: 11400000, guid: ee50536605f3dff44b9a1f068bfdf248, type: 2}
   unitAttack:
-    pool: {fileID: 0}
-    attackSpawnDistance: 0
+    pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
+    attackSpawnDistance: 0.5
   moveSpeed: 5
   _aiInput: {fileID: 276212658318604824}
+  _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}

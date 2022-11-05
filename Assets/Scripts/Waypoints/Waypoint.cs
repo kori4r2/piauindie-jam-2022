@@ -6,6 +6,15 @@ public class Waypoint : MonoBehaviour {
 
     private BuildingPlace _buildingPlace;
     public BuildingPlace BuildingPlace => _buildingPlace;
+    [SerializeField] private WaypointRuntimeSet runtimeSet;
+
+    private void OnEnable() {
+        runtimeSet.AddElement(this);
+    }
+
+    private void OnDisable() {
+        runtimeSet.RemoveElement(this);
+    }
 
     public void SetWaypoint(Waypoint nextWaypoint) {
         _nextWaypoint = nextWaypoint;

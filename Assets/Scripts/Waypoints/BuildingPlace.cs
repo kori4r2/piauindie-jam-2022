@@ -10,6 +10,15 @@ public class BuildingPlace : MonoBehaviour {
     private List<Worker> _workers = new List<Worker>();
 
     [SerializeField] private GameObject BuildingPrefab;
+    [SerializeField] private BuildingPlaceRuntimeSet runtimeSet;
+
+    private void OnEnable() {
+        runtimeSet.AddElement(this);
+    }
+
+    private void OnDisable() {
+        runtimeSet.RemoveElement(this);
+    }
 
     public void OnWorkerArrived(Worker worker) {
         _workers.Add(worker);
@@ -26,9 +35,8 @@ public class BuildingPlace : MonoBehaviour {
 
         if (IsComplete == true) {
             for (int i = 0; i < _workers.Count; i++) {
-                Destroy(_workers[i].gameObject);
+                _workers[i].GoHome();
             }
-
             Instantiate(BuildingPrefab, transform.position, Quaternion.identity);
         }
     }
