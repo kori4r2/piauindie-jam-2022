@@ -25,13 +25,4 @@ public class PlayerCharacter : Unit {
         if (reference.Value == this)
             reference.Value = null;
     }
-
-    public override void TakeDamage(int damage) {
-        currentHP -= damage;
-        if (currentHP <= 0)
-            Die();
-    }
-
-    protected override void Die() {
-    }
 }

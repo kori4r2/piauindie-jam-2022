@@ -18,9 +18,16 @@ public abstract class Unit : MonoBehaviour, IDamageable {
         ProcessMovementInput();
     }
 
-    public abstract void TakeDamage(int damage);
+    public virtual void TakeDamage(int damage) {
+        currentHP -= damage;
+        if (currentHP <= 0)
+            Die();
+    }
 
-    protected abstract void Die();
+    protected virtual void Die() {
+        OnDeath.Invoke();
+        Destroy(this.gameObject); // maybe do object pooling logic instead - might be overengineering for a game jam though
+    }
 
     protected virtual void ProcessMovementInput() {
         movable2D.SetVelocity(moveSpeed * movementDirection);
