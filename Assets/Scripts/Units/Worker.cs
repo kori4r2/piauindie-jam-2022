@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WorkerUnit : Unit {
+public class Worker : Unit {
     [SerializeField]
     private int _grantedXP;
     public int GrantedXP => _grantedXP;
@@ -25,5 +25,8 @@ public class WorkerUnit : Unit {
     }
 
     public override void TakeDamage(int damage) {
+    }
+
+    protected override void Die() {
     }
 }

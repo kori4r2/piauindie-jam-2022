@@ -1,14 +1,14 @@
 using UnityEngine;
 
 public class WorkerInput : AIInput {
-    private Waypoint _closestWaypoint;
+    private Waypoint _nextWaypoint;
 
     private void Awake() {
-        _closestWaypoint = FindClosestWaypoint();
+        _nextWaypoint = FindClosestWaypoint();
     }
 
     private Waypoint FindClosestWaypoint() {
-        var smallestDistance = float.MinValue;
+        var smallestDistance = float.MaxValue;
         var chosenWaypoint = default(Waypoint);
 
         var allWaypoints = FindObjectsOfType<Waypoint>();
@@ -28,10 +28,16 @@ public class WorkerInput : AIInput {
     }
 
     private Vector2 DirectionToWaypoint() {
-        if(_closestWaypoint == null) {
+        if(_nextWaypoint == null) {
             return default;
         }
 
-        return (_closestWaypoint.transform.position - transform.position).normalized;
+        return (_nextWaypoint.transform.position - transform.position).normalized;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if(collision.tag == "Waypoint") {
+            _nextWaypoint = collision.GetComponent<Waypoint>().NextWaypoint;
+        }
     }
 }

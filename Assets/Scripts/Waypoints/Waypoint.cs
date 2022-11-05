@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Waypoint : MonoBehaviour {
     private Waypoint _nextWaypoint;
+    public Waypoint NextWaypoint => _nextWaypoint;
+
     private BasePoint _basePoint;
 
     public void SetWaypoint(Waypoint nextWaypoint) {
