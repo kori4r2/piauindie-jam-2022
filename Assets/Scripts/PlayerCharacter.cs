@@ -3,8 +3,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerCharacter : Unit {
     private CustomInputs customInputs;
-    private Vector2 movementDirection;
-    [SerializeField, Range(0f, 20f)] private float moveSpeed = 5f;
 
     protected override void Awake() {
         base.Awake();
@@ -36,9 +34,5 @@ public class PlayerCharacter : Unit {
         customInputs.Combat.Move.performed -= ReadMovementInput;
         customInputs.Combat.Move.started -= ReadMovementInput;
         customInputs.Combat.Move.canceled -= ReadMovementInput;
-    }
-
-    protected override void ProcessMovementInput() {
-        movable2D.SetVelocity(moveSpeed * movementDirection);
     }
 }

@@ -6,11 +6,16 @@ public abstract class Unit : MonoBehaviour {
     [SerializeField] protected UnitStats unitStats;
     protected Movable2D movable2D;
 
+    protected Vector2 movementDirection;
+    [SerializeField, Range(0f, 20f)] protected float moveSpeed = 5f;
+
     protected virtual void Update() {
         ProcessMovementInput();
     }
 
-    protected abstract void ProcessMovementInput();
+    protected virtual void ProcessMovementInput() {
+        movable2D.SetVelocity(moveSpeed * movementDirection);
+    }
 
     protected virtual void Awake() {
         movable2D = new Movable2D(rigidBody);
