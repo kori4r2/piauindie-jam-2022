@@ -26,6 +26,6 @@ public abstract class AIUnit : Unit {
         movementDirection = direction;
     }
 
-    private void OnAttackPerformed(Vector2 direction) {
+    protected virtual void OnAttackPerformed(Vector2 direction) {
     }
 }
