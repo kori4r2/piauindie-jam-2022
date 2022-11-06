@@ -240,12 +240,13 @@ MonoBehaviour:
     pool: {fileID: 11400000, guid: 75416f90f34c671cdae50e644ef27f82, type: 2}
     attackCooldown: 1
     attackSpawnDistance: 1
-    soundFX: {fileID: 0}
+    soundFX: {fileID: 8300000, guid: d22862f652c20089d8ab3aac60fb267e, type: 3}
   unitAnimation:
     animator: {fileID: 1816441565488005170}
     spriteRenderer: {fileID: 1791154498737011448}
     expectedSpeed: 5
   takeDamageSFX: {fileID: 0}
+  deathSFX: {fileID: 0}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: -2520268873326814321}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}

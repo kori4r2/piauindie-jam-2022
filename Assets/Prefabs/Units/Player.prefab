@@ -157,12 +157,13 @@ MonoBehaviour:
     pool: {fileID: 11400000, guid: 17f0c3ef20033a77384fa7085aef0e97, type: 2}
     attackCooldown: 0.15
     attackSpawnDistance: 0.5
-    soundFX: {fileID: 0}
+    soundFX: {fileID: 8300000, guid: 778dfe473f00e27c394274c909ca3efc, type: 3}
   unitAnimation:
     animator: {fileID: 2845313643222869428}
     spriteRenderer: {fileID: 5693772088772893133}
     expectedSpeed: 5
-  takeDamageSFX: {fileID: 0}
+  takeDamageSFX: {fileID: 8300000, guid: f982b7b1ac7dc87fd95bef9860155575, type: 3}
+  deathSFX: {fileID: 8300000, guid: d609ef48ddf0564c690c8083460a67b6, type: 3}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   reference: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
 --- !u!95 &2845313643222869428

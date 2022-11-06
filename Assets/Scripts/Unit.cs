@@ -9,6 +9,7 @@ public abstract class Unit : MonoBehaviour, IDamageable {
     [SerializeField] protected UnitAttack unitAttack;
     [SerializeField] UnitAnimation unitAnimation;
     [SerializeField] AudioClip takeDamageSFX;
+    [SerializeField] AudioClip deathSFX;
     [SerializeField] protected BoolEvent gameOverWithVictory;
     protected GenericEventListener<bool> gameOverListener;
     public readonly UnityEvent OnDeath = new UnityEvent();
@@ -27,6 +28,7 @@ public abstract class Unit : MonoBehaviour, IDamageable {
         unitAttack.Init(this);
         unitAnimation.Setup(this);
         OnTakeDamage.AddListener(_ => SoundPlayer.Instance?.PlaySFX(takeDamageSFX));
+        OnDeath.AddListener(() => SoundPlayer.Instance?.PlaySFX(deathSFX));
         PrepareForGameOver();
     }
 

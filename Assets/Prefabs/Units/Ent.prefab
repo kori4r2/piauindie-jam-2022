@@ -189,7 +189,8 @@ MonoBehaviour:
     animator: {fileID: 1553719420827498736}
     spriteRenderer: {fileID: 7678390551506303851}
     expectedSpeed: 5
-  takeDamageSFX: {fileID: 0}
+  takeDamageSFX: {fileID: 8300000, guid: 69c1ad55dbc47190b86528947645451f, type: 3}
+  deathSFX: {fileID: 8300000, guid: 69c1ad55dbc47190b86528947645451f, type: 3}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 7547089035569156477}
   _runtimeSet: {fileID: 11400000, guid: 189de047803ff4104922ee6d3bb0559a, type: 2}

@@ -178,16 +178,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7adf2e8556ac4b4596a84ff327c0537, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitAnimation:
-    animator: {fileID: 1553719420827498736}
-    spriteRenderer: {fileID: 7678390551506303851}
-    expectedSpeed: 5
   rigidBody: {fileID: 7547089035569156474}
   unitStats: {fileID: 11400000, guid: ee50536605f3dff44b9a1f068bfdf248, type: 2}
   unitAttack:
     pool: {fileID: 0}
     attackCooldown: 0
     attackSpawnDistance: 0
+    soundFX: {fileID: 0}
+  unitAnimation:
+    animator: {fileID: 1553719420827498736}
+    spriteRenderer: {fileID: 7678390551506303851}
+    expectedSpeed: 5
+  takeDamageSFX: {fileID: 8300000, guid: 3a4b8a59b531b040a9e1728793da7058, type: 3}
+  deathSFX: {fileID: 8300000, guid: 3a4b8a59b531b040a9e1728793da7058, type: 3}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 7547089035569156477}
   _runtimeSet: {fileID: 11400000, guid: 189de047803ff4104922ee6d3bb0559a, type: 2}
