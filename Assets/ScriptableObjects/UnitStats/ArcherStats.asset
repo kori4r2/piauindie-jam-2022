@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69f39488b582f77b28062e07d83b25c0, type: 3}
-  m_Name: Enemy_A_Stats
+  m_Name: ArcherStats
   m_EditorClassIdentifier: 
-  maxHP: 3
+  maxHP: 2
   attackPower: 1
-  moveSpeed: 4
+  moveSpeed: 5
