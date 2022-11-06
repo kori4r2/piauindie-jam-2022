@@ -1503,6 +1503,10 @@ PrefabInstance:
       propertyPath: sceneToChange.sceneName
       value: Level1
       objectReference: {fileID: 0}
+    - target: {fileID: 6555021108051343133, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
+      propertyPath: timeLimit
+      value: 90
+      objectReference: {fileID: 0}
     - target: {fileID: 6555021108824930408, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: m_Camera
       value: 
@@ -1825,7 +1829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: respawnCooldown
-      value: 2
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.size

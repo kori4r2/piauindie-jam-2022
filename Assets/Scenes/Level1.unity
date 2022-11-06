@@ -726,7 +726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: maxUnits
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: _drawGizmos
@@ -2882,7 +2882,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: maxUnits
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: _drawGizmos
