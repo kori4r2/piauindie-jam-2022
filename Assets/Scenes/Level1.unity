@@ -2455,7 +2455,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6555021108051343133, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: timeLimit
-      value: 90
+      value: 150
       objectReference: {fileID: 0}
     - target: {fileID: 6555021108824930408, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: m_Camera

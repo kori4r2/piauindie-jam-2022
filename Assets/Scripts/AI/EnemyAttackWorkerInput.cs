@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyAttackWorkerInput : AIInput {
     [SerializeField] private AIUnitRuntimeSet workers;
-    [SerializeField, Range(0f, 10f)] private float _stopDistance = 5f;
+    [SerializeField, Range(0f, 20f)] private float _stopDistance = 5f;
     private Worker currentTarget = null;
 
     public void Update() {
