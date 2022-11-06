@@ -8,14 +8,19 @@ public abstract class Unit : MonoBehaviour, IDamageable {
     [SerializeField] protected UnitStats unitStats;
     public UnitStats Stats => unitStats;
     [SerializeField] protected UnitAttack unitAttack;
+    [SerializeField] protected BoolEvent gameOverWithVictory;
+    protected GenericEventListener<bool> gameOverListener;
     public readonly UnityEvent OnDeath = new UnityEvent();
     public readonly UnityEvent<int> OnTakeDamage = new UnityEvent<int>();
     public readonly UnityEvent OnAttack = new UnityEvent();
     protected Movable2D movable2D;
     protected Vector2 movementDirection;
     protected int currentHP;
+    protected bool gameIsOver;
 
     protected virtual void Update() {
+        if (gameIsOver)
+            return;
         ProcessMovementInput();
     }
 
@@ -33,6 +38,8 @@ public abstract class Unit : MonoBehaviour, IDamageable {
     }
 
     protected virtual void ProcessMovementInput() {
+        if (gameIsOver)
+            return;
         Vector2 newVelocity = Stats.MoveSpeed * movementDirection;
         movable2D.SetVelocity(newVelocity);
         unitAnimation.Update(newVelocity);
@@ -44,9 +51,18 @@ public abstract class Unit : MonoBehaviour, IDamageable {
         movable2D.BlockMovement();
         unitAttack.Init(this);
         unitAnimation.Setup(this);
+        gameIsOver = false;
+        gameOverListener = new GenericEventListener<bool>(gameOverWithVictory, OnGameOver);
+        gameOverListener.StartListeningEvent();
+    }
+
+    protected virtual void OnGameOver(bool isVictory) {
+        gameIsOver = true;
     }
 
     protected virtual void FixedUpdate() {
+        if (gameIsOver)
+            return;
         movable2D.UpdateMovable();
     }
 }

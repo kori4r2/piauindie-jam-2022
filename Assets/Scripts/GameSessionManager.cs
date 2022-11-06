@@ -1,30 +1,50 @@
+using System.Collections;
 using UnityEngine;
+using Toblerone.Toolbox;
 
 public class GameSessionManager : MonoBehaviour {
-    private BuildingPlace[] _buildingPlaces;
-
+    [SerializeField] private float showButtonsDelay;
     [SerializeField] private GameObject _gameVictoryScreen;
+    [SerializeField] private GameObject _victoryButtons;
     [SerializeField] private GameObject _gameDefeatScreen;
+    [SerializeField] private GameObject _defeatButtons;
     [SerializeField] private PlayerVariable _playerRef;
+    [SerializeField] private GenericEvent<bool> endGameEvent;
+    [SerializeField] private RuntimeSet<BuildingPlace> buildingPlaces;
+    private bool gameEnded;
 
     private void Awake() {
-        _buildingPlaces = FindObjectsOfType<BuildingPlace>();
         Time.timeScale = 1.0f;
+        gameEnded = false;
     }
 
     private void Update() {
+        if (gameEnded)
+            return;
         if (WinConditionTriggered()) {
             Time.timeScale = 0;
-            _gameVictoryScreen.SetActive(true);
+            StartCoroutine(ShowEndScreen(true));
         } else if (DefeatConditionTriggered()) {
             Time.timeScale = 0;
-            _gameDefeatScreen.SetActive(true);
+            StartCoroutine(ShowEndScreen(false));
         }
     }
 
+    private IEnumerator ShowEndScreen(bool victory) {
+        gameEnded = true;
+        endGameEvent.Raise(victory);
+        GameObject endScreen = victory ? _gameVictoryScreen : _gameDefeatScreen;
+        endScreen.SetActive(true);
+        yield return new WaitForSecondsRealtime(showButtonsDelay);
+        GameObject buttonsObj = victory ? _victoryButtons : _defeatButtons;
+        buttonsObj.SetActive(true);
+        CustomInputs customInputs = new CustomInputs();
+        customInputs.Enable();
+    }
+
     private bool WinConditionTriggered() {
-        for (int i = 0; i < _buildingPlaces.Length; i++) {
-            if (_buildingPlaces[i].IsComplete == false) {
+        foreach (BuildingPlace buildingPlace in buildingPlaces) {
+            if (!buildingPlace.IsComplete) {
                 return false;
             }
         }

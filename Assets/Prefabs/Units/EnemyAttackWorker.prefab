@@ -196,11 +196,13 @@ MonoBehaviour:
   unitAnimation:
     animator: {fileID: 933259874034387489}
     spriteRenderer: {fileID: 8324344533793733046}
+    expectedSpeed: 5
   rigidBody: {fileID: 7739973134833658720}
   unitStats: {fileID: 11400000, guid: a1a0ee47a7b9a534797cb712dc953bde, type: 2}
   unitAttack:
     pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
     attackSpawnDistance: 0.5
+  gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 4976248161092092298}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}
 --- !u!95 &933259874034387489

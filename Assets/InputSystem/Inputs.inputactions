@@ -23,7 +23,7 @@
                 },
                 {
                     "name": "MousePosition",
-                    "type": "PassThrough",
+                    "type": "Value",
                     "id": "8cd9b4ba-561d-4455-86ff-46c229a6a0e7",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -160,6 +160,52 @@
                     "processors": "",
                     "groups": "MouseKeyboard",
                     "action": "MousePosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "UI",
+            "id": "4a4d6585-f75c-4532-9b01-6132cca770fb",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "008ce64c-b2e9-4e17-b657-16cbab26e9d2",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Point",
+                    "type": "PassThrough",
+                    "id": "e47a9d88-8815-46d6-898f-11bede78ad2f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "098932a7-2b7d-407b-ad62-64965d782f23",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseKeyboard",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42ee2a6d-d20a-4b47-b350-560eabbd23a6",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "MouseKeyboard",
+                    "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -12,8 +12,15 @@ public class PlayerCharacter : Unit {
     }
 
     private void OnEnable() {
+        if (gameIsOver)
+            return;
         inputProcessor.Enable();
         reference.Value = this;
+    }
+
+    protected override void OnGameOver(bool isVictory) {
+        inputProcessor.Disable();
+        base.OnGameOver(isVictory);
     }
 
     private void ReadMovementInput(InputAction.CallbackContext context) {
