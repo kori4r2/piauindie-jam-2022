@@ -14,7 +14,7 @@ public class WaypointsBuilder : MonoBehaviour {
 
 #if UNITY_EDITOR
     private void OnDrawGizmos() {
-        if(_drawGizmos == false) {
+        if (_drawGizmos == false) {
             return;
         }
 
@@ -22,8 +22,17 @@ public class WaypointsBuilder : MonoBehaviour {
             var currentPos = transform.GetChild(i).position;
             Gizmos.DrawWireSphere(currentPos, .5f);
 
-            if(i < transform.childCount - 1) {
-                var nextPos = transform.GetChild(i + 1).position;
+            if(transform.GetChild(i).tag == "BuildingPlace") {
+                continue;
+            }
+
+            if (i < transform.childCount - 1) {
+                Vector2 nextPos;
+                if (transform.GetChild(i + 1).tag == "BuildingPlace" && i < transform.childCount - 2) {
+                    nextPos = transform.GetChild(i + 2).position;
+                    Gizmos.DrawLine(currentPos, nextPos);
+                }
+                nextPos = transform.GetChild(i + 1).position;
                 Gizmos.DrawLine(currentPos, nextPos);
             }
         }
