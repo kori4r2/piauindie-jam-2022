@@ -1491,10 +1491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToChange:
-    sceneName: 
-    assetPath: 
-    guid: 
-  newBGM: {fileID: 0}
+    sceneName: Menu
+    assetPath: Assets/Scenes/Menu.unity
+    guid: 911b8484b15bb6c4a8fcbe956b38c488
+  newBGM: {fileID: 8300000, guid: 38aa006d0ee08e9a0ab98ccefc270984, type: 3}
 --- !u!114 &2752116541752865073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2130,9 +2130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToChange:
-    sceneName: Level1
-    assetPath: Assets/Scenes/Level1.unity
-    guid: 76d4826491a51064aa6c01ceada74540
+    sceneName: 
+    assetPath: 
+    guid: 
   newBGM: {fileID: 0}
 --- !u!114 &6469660458551171400
 MonoBehaviour:
@@ -2337,10 +2337,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneToChange:
-    sceneName: 
-    assetPath: 
-    guid: 
-  newBGM: {fileID: 0}
+    sceneName: Menu
+    assetPath: Assets/Scenes/Menu.unity
+    guid: 911b8484b15bb6c4a8fcbe956b38c488
+  newBGM: {fileID: 8300000, guid: 38aa006d0ee08e9a0ab98ccefc270984, type: 3}
 --- !u!114 &4274789454126540259
 MonoBehaviour:
   m_ObjectHideFlags: 0

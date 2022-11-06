@@ -5,11 +5,11 @@ public class SoundPlayer : MonoBehaviour {
     [SerializeField] private AudioSource audioSource;
 
     private void Awake() {
-        DontDestroyOnLoad(gameObject);
         if (Instance != null && Instance != this) {
-            Destroy(this);
+            Destroy(gameObject);
             return;
         }
+        DontDestroyOnLoad(gameObject);
         Instance = this;
         audioSource.loop = true;
         audioSource.playOnAwake = true;

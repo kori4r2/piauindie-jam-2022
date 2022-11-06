@@ -365,6 +365,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5248716688529608578, guid: 21a2b92eea674dde7886d951cdc9f28c, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 38aa006d0ee08e9a0ab98ccefc270984, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21a2b92eea674dde7886d951cdc9f28c, type: 3}
 --- !u!1 &580258228
@@ -1733,7 +1737,7 @@ MonoBehaviour:
     sceneName: Level0
     assetPath: Assets/Scenes/Level0.unity
     guid: 7044e7bcadc742145b1bfcb6b78a7656
-  newBGM: {fileID: 0}
+  newBGM: {fileID: 8300000, guid: ced971b906f116277999adad94e87111, type: 3}
 --- !u!224 &1635727778293634675
 RectTransform:
   m_ObjectHideFlags: 0
