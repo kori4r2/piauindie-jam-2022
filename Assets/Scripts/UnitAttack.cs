@@ -1,5 +1,5 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
 [Serializable]
 public class UnitAttack {
@@ -14,6 +14,7 @@ public class UnitAttack {
     public void Attack(Vector2 targetPosition) {
         if (pool == null)
             return;
+        thisUnit.OnAttack.Invoke();
         Vector2 thisUnitPosition = new Vector2(thisUnit.transform.position.x, thisUnit.transform.position.y);
         Vector2 attackDirection = (targetPosition - thisUnitPosition).normalized;
         Vector2 spawnLocation2D = thisUnitPosition + (attackSpawnDistance * attackDirection);
