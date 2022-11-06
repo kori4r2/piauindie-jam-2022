@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 2
   attackPower: 1
-  moveSpeed: 1
+  moveSpeed: 2.5

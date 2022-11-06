@@ -1407,7 +1407,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: respawnCooldown
-      value: 4
+      value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: spawnPositions.Array.data[0].y
