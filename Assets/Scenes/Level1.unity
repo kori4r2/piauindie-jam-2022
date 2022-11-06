@@ -485,6 +485,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
       value: 
       objectReference: {fileID: 1212358291364924025, guid: 5ae7f4ac843a0674799fa5928d5d225c, type: 3}
@@ -544,6 +548,10 @@ PrefabInstance:
     - target: {fileID: 6209707281184816337, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -1075,6 +1083,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
       value: 
       objectReference: {fileID: 1212358291364924025, guid: 5ae7f4ac843a0674799fa5928d5d225c, type: 3}
@@ -1134,6 +1146,10 @@ PrefabInstance:
     - target: {fileID: 6209707281184816337, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -1309,6 +1325,10 @@ PrefabInstance:
     - target: {fileID: 6209707281184816337, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -2342,6 +2362,10 @@ PrefabInstance:
     - target: {fileID: 6209707281184816337, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
+      propertyPath: _necessaryEXP
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
