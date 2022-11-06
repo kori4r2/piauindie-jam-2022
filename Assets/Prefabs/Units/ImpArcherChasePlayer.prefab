@@ -248,16 +248,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc2b8e9d1b32a542bbab51599ffaa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitAnimation:
-    animator: {fileID: 1816441565488005170}
-    spriteRenderer: {fileID: 1791154498737011448}
-    expectedSpeed: 5
   rigidBody: {fileID: 7739973134833658720}
   unitStats: {fileID: 11400000, guid: a1a0ee47a7b9a534797cb712dc953bde, type: 2}
   unitAttack:
     pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
     attackCooldown: 2
     attackSpawnDistance: 0.5
+    soundFX: {fileID: 0}
+  unitAnimation:
+    animator: {fileID: 1816441565488005170}
+    spriteRenderer: {fileID: 1791154498737011448}
+    expectedSpeed: 5
+  takeDamageSFX: {fileID: 0}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 276212658318604824}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}
@@ -293,6 +295,6 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.42}
+  m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.97

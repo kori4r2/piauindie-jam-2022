@@ -689,7 +689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: respawnCooldown
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.size
@@ -706,11 +706,11 @@ PrefabInstance:
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.data[1]
       value: 
-      objectReference: {fileID: 7547089035073894832, guid: 6a405ceee9a944144b4e4206061c6e86, type: 3}
+      objectReference: {fileID: 7547089035073894832, guid: 7812dd6317edbbf4ea9badcfc17b9bc0, type: 3}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.data[2]
       value: 
-      objectReference: {fileID: 7547089035073894832, guid: 6a405ceee9a944144b4e4206061c6e86, type: 3}
+      objectReference: {fileID: 7547089035073894832, guid: 7812dd6317edbbf4ea9badcfc17b9bc0, type: 3}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.data[3]
       value: 
@@ -2251,9 +2251,25 @@ PrefabInstance:
       value: 2.5
       objectReference: {fileID: 0}
     - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
+      propertyPath: unitsToSpawn.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: spawnPositions.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
+      propertyPath: unitsToSpawn.Array.data[1]
+      value: 
+      objectReference: {fileID: 7547089035569156476, guid: e0524c889c325344cbf7abd53f44ab5b, type: 3}
+    - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
+      propertyPath: unitsToSpawn.Array.data[2]
+      value: 
+      objectReference: {fileID: 7547089035569156476, guid: e0524c889c325344cbf7abd53f44ab5b, type: 3}
+    - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
+      propertyPath: unitsToSpawn.Array.data[3]
+      value: 
+      objectReference: {fileID: 7547089035569156476, guid: 63e0ecd28afb0b14b80a4ae8c9e8437f, type: 3}
     - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: spawnPositions.Array.data[0].x
       value: -4.35
@@ -2408,6 +2424,10 @@ PrefabInstance:
     - target: {fileID: 2344641325584184934, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: sceneToChange.sceneName
       value: Level2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555021108051343133, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
+      propertyPath: timeLimit
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 6555021108824930408, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: m_Camera
