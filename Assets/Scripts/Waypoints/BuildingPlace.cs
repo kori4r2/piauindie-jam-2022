@@ -23,6 +23,28 @@ public class BuildingPlace : MonoBehaviour {
     public void OnWorkerArrived(Worker worker) {
         _workers.Add(worker);
         ChangeEXP(worker.GrantedEXP);
+        if (_workers.Count > 1) {
+            MoveNewWorker();
+        }
+    }
+
+    private void MoveNewWorker() {
+        float angle = CalculateAngleOffset();
+        Vector3 newPosition = CalculateNewPosition(angle);
+        _workers[_workers.Count - 1].transform.position = newPosition;
+    }
+
+    private float CalculateAngleOffset() {
+        Worker lastWorker = _workers[_workers.Count - 2];
+        Worker newWorker = _workers[_workers.Count - 1];
+        float progressOffset = (lastWorker.GrantedEXP + newWorker.GrantedEXP) / (2f * _necessaryEXP);
+        return progressOffset * 360f;
+    }
+
+    private Vector3 CalculateNewPosition(float angle) {
+        Vector3 fromVector = _workers[_workers.Count - 2].transform.position - transform.position;
+        Vector3 toVector = Quaternion.AngleAxis(angle, Vector3.back) * fromVector;
+        return transform.position + toVector;
     }
 
     public void OnWorkerDied(Worker worker) {
