@@ -3,17 +3,9 @@ using UnityEngine;
 public class EnemyChasePlayerInput : AIInput {
     [SerializeField, Range(0f, 10f)] private float _stopDistance = 5f;
 
-    [SerializeField] private float _attackInterval;
-    private float _attackTimer;
-
-    private void Awake() {
-        _attackTimer = _attackInterval;
-    }
-
     public void Update() {
         bool reachedPlayer = MoveTowardsPlayer();
         if (reachedPlayer == true) {
-            _attackTimer -= Time.deltaTime;
             HandleAttacking();
         }
     }
@@ -41,10 +33,9 @@ public class EnemyChasePlayerInput : AIInput {
     }
 
     private void HandleAttacking() {
-        if (_attackTimer > 0)
+        if (!ThisUnit.CanAttack)
             return;
 
-        _attackTimer = _attackInterval;
         Vector3 playerPosition = _playerRef.Value.transform.position;
         AttackPerformed.Invoke(playerPosition);
     }

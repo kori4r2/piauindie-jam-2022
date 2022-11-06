@@ -3,20 +3,13 @@ using UnityEngine;
 public class EnemyAttackWorkerInput : AIInput {
     [SerializeField] private AIUnitRuntimeSet workers;
     [SerializeField, Range(0f, 10f)] private float _stopDistance = 5f;
-    [SerializeField] private float _attackInterval;
-    private float _attackTimer;
     private Worker currentTarget = null;
-
-    private void Awake() {
-        _attackTimer = _attackInterval;
-    }
 
     public void Update() {
         if (currentTarget == null)
             SelectNewTarget();
         bool reachedTarget = MoveTowardsTarget();
         if (reachedTarget == true) {
-            _attackTimer -= Time.deltaTime;
             HandleAttacking();
         }
     }
@@ -56,10 +49,9 @@ public class EnemyAttackWorkerInput : AIInput {
     }
 
     private void HandleAttacking() {
-        if (_attackTimer > 0)
+        if (!ThisUnit.CanAttack)
             return;
 
-        _attackTimer = _attackInterval;
         Vector3 targetPosition = currentTarget.transform.position;
         AttackPerformed.Invoke(targetPosition);
     }

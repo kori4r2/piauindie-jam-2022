@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Toblerone.Toolbox;
 
@@ -7,9 +8,11 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
     [SerializeField] protected bool destroyOnContact;
     protected Movable2D movable2D;
     protected Unit attacker;
+    protected HashSet<Collider2D> collidersChecked;
 
     protected virtual void Awake() {
         movable2D = new Movable2D(rigidBody);
+        collidersChecked = new HashSet<Collider2D>();
     }
 
     protected virtual void FixedUpdate() {
@@ -21,9 +24,14 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
         movable2D.AllowDynamicMovement();
     }
 
-    public virtual void InitObject() { }
+    public virtual void InitObject() {
+        collidersChecked.Clear();
+    }
 
     protected void OnTriggerEnter2D(Collider2D other) {
+        if (collidersChecked.Contains(other))
+            return;
+        collidersChecked.Add(other);
         if ((TryDealDamage(attacker, other.gameObject) && destroyOnContact) || other.CompareTag(CameraEdgeCollider.boundsTag)) {
             Destroy();
         }

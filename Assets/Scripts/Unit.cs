@@ -13,6 +13,7 @@ public abstract class Unit : MonoBehaviour, IDamageable {
     public readonly UnityEvent OnDeath = new UnityEvent();
     public readonly UnityEvent<int> OnTakeDamage = new UnityEvent<int>();
     public readonly UnityEvent OnAttack = new UnityEvent();
+    public bool CanAttack => unitAttack.CanAttack;
     protected Movable2D movable2D;
     protected Vector2 movementDirection;
     protected int currentHP;
@@ -22,6 +23,7 @@ public abstract class Unit : MonoBehaviour, IDamageable {
         if (gameIsOver)
             return;
         ProcessMovementInput();
+        unitAttack.Update(Time.deltaTime);
     }
 
     public virtual void TakeDamage(int damage) {

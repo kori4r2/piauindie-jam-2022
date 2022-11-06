@@ -7,6 +7,7 @@ public abstract class AIUnit : Unit {
     protected override void Awake() {
         base.Awake();
         movable2D.AllowDynamicMovement();
+        _aiInput.ThisUnit = this;
     }
 
     private void OnEnable() {
