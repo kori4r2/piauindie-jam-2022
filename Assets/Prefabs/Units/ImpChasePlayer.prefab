@@ -153,7 +153,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerRef: {fileID: 11400000, guid: 3a92cdffedd4b6918864384b30d078d4, type: 2}
   _stopDistance: 10
-  _attackInterval: 1
 --- !u!114 &7547089035073894832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,7 +173,9 @@ MonoBehaviour:
   unitStats: {fileID: 11400000, guid: a1a0ee47a7b9a534797cb712dc953bde, type: 2}
   unitAttack:
     pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
+    attackCooldown: 0
     attackSpawnDistance: 0.5
+  gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 276212658318604824}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}
 --- !u!95 &1816441565488005170
