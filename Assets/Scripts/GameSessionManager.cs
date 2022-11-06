@@ -3,11 +3,17 @@ using UnityEngine;
 using Toblerone.Toolbox;
 
 public class GameSessionManager : MonoBehaviour {
+    [Header("Config")]
     [SerializeField] private float showButtonsDelay;
+    [Header("References")]
     [SerializeField] private GameObject _gameVictoryScreen;
     [SerializeField] private GameObject _victoryButtons;
     [SerializeField] private GameObject _gameDefeatScreen;
     [SerializeField] private GameObject _defeatButtons;
+    [Header("Timer")]
+    [SerializeField, Range(60, 540), Tooltip("time in seconds")] private int timeLimit = 60;
+    [SerializeField] private FloatVariable timerVariable;
+    [Header("External References")]
     [SerializeField] private PlayerVariable _playerRef;
     [SerializeField] private GenericEvent<bool> endGameEvent;
     [SerializeField] private RuntimeSet<BuildingPlace> buildingPlaces;
@@ -18,9 +24,14 @@ public class GameSessionManager : MonoBehaviour {
         gameEnded = false;
     }
 
+    private void Start() {
+        timerVariable.Value = timeLimit;
+    }
+
     private void Update() {
         if (gameEnded)
             return;
+        timerVariable.Value -= Time.deltaTime;
         if (WinConditionTriggered()) {
             Time.timeScale = 0;
             StartCoroutine(ShowEndScreen(true));
@@ -52,6 +63,6 @@ public class GameSessionManager : MonoBehaviour {
     }
 
     private bool DefeatConditionTriggered() {
-        return _playerRef.Value == null;
+        return _playerRef.Value == null || timerVariable.Value < 0;
     }
 }
