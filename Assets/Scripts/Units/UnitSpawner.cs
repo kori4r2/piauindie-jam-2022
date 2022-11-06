@@ -12,6 +12,7 @@ public class UnitSpawner : MonoBehaviour {
     [SerializeField] private AIUnitRuntimeSet unitsRuntimeSet;
     [Header("Debug")]
     [SerializeField] private bool _drawGizmos;
+    [SerializeField] private Color _gizmosColor;
 
     private int currentUnitIndex = 0;
     private int currentPositionIndex = 0;
@@ -55,6 +56,7 @@ public class UnitSpawner : MonoBehaviour {
 
 #if UNITY_EDITOR
     private void OnDrawGizmos() {
+        Gizmos.color = _gizmosColor;
         if (_drawGizmos == false) {
             return;
         }

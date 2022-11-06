@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 10
   attackPower: 1
-  moveSpeed: 5
+  moveSpeed: 10
