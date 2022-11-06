@@ -1271,10 +1271,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 680611790227828509, guid: f10004a35d1e7e114824ee2c202a5ad9, type: 3}
-      propertyPath: unitAttack.attackCooldown
-      value: 0.35
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10004a35d1e7e114824ee2c202a5ad9, type: 3}
 --- !u!1001 &1868792044479235222
@@ -1491,6 +1487,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2344641325584184934, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
+      propertyPath: sceneToChange.guid
+      value: 76d4826491a51064aa6c01ceada74540
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344641325584184934, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
+      propertyPath: sceneToChange.assetPath
+      value: Assets/Scenes/Level1.unity
+      objectReference: {fileID: 0}
+    - target: {fileID: 2344641325584184934, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
+      propertyPath: sceneToChange.sceneName
+      value: Level1
+      objectReference: {fileID: 0}
     - target: {fileID: 6555021108824930408, guid: d02c0a9de5cd50aa4b96bb3c8693d501, type: 3}
       propertyPath: m_Camera
       value: 
