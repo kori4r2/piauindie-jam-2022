@@ -23,6 +23,8 @@ public class SceneChanger : MonoBehaviour {
     public void Quit() {
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.ExitPlaymode();
+#elif UNITY_WEBGL
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 #else
         Application.Quit();
 #endif
