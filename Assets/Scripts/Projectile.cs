@@ -6,6 +6,7 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
     [SerializeField] protected Rigidbody2D rigidBody;
     [SerializeField] protected ProjectilePoolVariable pool;
     [SerializeField] protected bool destroyOnContact;
+    [SerializeField] protected AudioClip impactSFX;
     protected Movable2D movable2D;
     protected Unit attacker;
     protected HashSet<Collider2D> collidersChecked;
@@ -42,10 +43,11 @@ public abstract class Projectile : MonoBehaviour, IPoolableObject {
         pool.Value.ReturnObjectToPool(this);
     }
 
-    private static bool TryDealDamage(Unit attacker, GameObject collisionObj) {
+    private bool TryDealDamage(Unit attacker, GameObject collisionObj) {
         if (collisionObj.TryGetComponent(out IDamageable target)) {
             if (!CanDamage(attacker, target))
                 return false;
+            SoundPlayer.Instance?.PlaySFX(impactSFX);
             target.TakeDamage(attacker.Stats.AttackPower);
             return true;
         }

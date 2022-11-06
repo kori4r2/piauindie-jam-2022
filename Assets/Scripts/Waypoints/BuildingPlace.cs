@@ -10,6 +10,7 @@ public class BuildingPlace : MonoBehaviour {
     private List<Worker> _workers = new List<Worker>();
 
     [SerializeField] private GameObject BuildingPrefab;
+    [SerializeField] private AudioClip finishedBuildingSFX;
     [SerializeField] private BuildingPlaceRuntimeSet runtimeSet;
 
     private void OnEnable() {
@@ -59,6 +60,7 @@ public class BuildingPlace : MonoBehaviour {
             for (int i = 0; i < _workers.Count; i++) {
                 _workers[i].GoHome();
             }
+            SoundPlayer.Instance?.PlaySFX(finishedBuildingSFX);
             Instantiate(BuildingPrefab, transform.position, Quaternion.identity);
         }
     }

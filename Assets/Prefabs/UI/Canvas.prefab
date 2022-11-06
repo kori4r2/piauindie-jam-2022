@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 2955012733219433091}
   - component: {fileID: 747845634978999340}
   - component: {fileID: 3496284282854613094}
+  - component: {fileID: 161517345533268093}
   m_Layer: 5
   m_Name: ButtonRestartLevel
   m_TagString: Untagged
@@ -397,6 +398,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 161517345533268093}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 747845634978999340}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ReloadScene
@@ -425,6 +438,7 @@ MonoBehaviour:
     sceneName: 
     assetPath: 
     guid: 
+  newBGM: {fileID: 0}
 --- !u!114 &3496284282854613094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -455,6 +469,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &161517345533268093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1442584861986208331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071fe43947b47772b85d37a83e8b5949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 0}
 --- !u!1 &1852022588320537745
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,6 +1340,7 @@ GameObject:
   - component: {fileID: 7700956449012808850}
   - component: {fileID: 1225023989632573280}
   - component: {fileID: 8067913277678993633}
+  - component: {fileID: 2752116541752865073}
   m_Layer: 5
   m_Name: ButtonBackToMenu
   m_TagString: Untagged
@@ -1422,6 +1450,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2752116541752865073}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 8067913277678993633}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -1450,6 +1490,20 @@ MonoBehaviour:
     sceneName: 
     assetPath: 
     guid: 
+  newBGM: {fileID: 0}
+--- !u!114 &2752116541752865073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8040640251719582304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071fe43947b47772b85d37a83e8b5949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 0}
 --- !u!1 &8277680799487701367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1731,6 +1785,7 @@ GameObject:
   - component: {fileID: 8006645081108856053}
   - component: {fileID: 2344641325584184934}
   - component: {fileID: 6469660458551171400}
+  - component: {fileID: 7957668403898888955}
   m_Layer: 5
   m_Name: ButtonNextLevel
   m_TagString: Untagged
@@ -1810,6 +1865,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7957668403898888955}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2344641325584184934}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -1838,6 +1905,7 @@ MonoBehaviour:
     sceneName: 
     assetPath: 
     guid: 
+  newBGM: {fileID: 0}
 --- !u!114 &6469660458551171400
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1868,6 +1936,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7957668403898888955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8812313533111899456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071fe43947b47772b85d37a83e8b5949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 0}
 --- !u!1 &9086547753684066009
 GameObject:
   m_ObjectHideFlags: 0
@@ -1881,6 +1962,7 @@ GameObject:
   - component: {fileID: 3210055387307733301}
   - component: {fileID: 9160106635129930891}
   - component: {fileID: 5343288176444294336}
+  - component: {fileID: 4274789454126540259}
   m_Layer: 5
   m_Name: ButtonBackToMenu
   m_TagString: Untagged
@@ -1990,6 +2072,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 4274789454126540259}
+        m_TargetAssemblyTypeName: ButtonSound, Assembly-CSharp
+        m_MethodName: PlaySFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 5343288176444294336}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: ChangeScene
@@ -2018,3 +2112,17 @@ MonoBehaviour:
     sceneName: 
     assetPath: 
     guid: 
+  newBGM: {fileID: 0}
+--- !u!114 &4274789454126540259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9086547753684066009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 071fe43947b47772b85d37a83e8b5949, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 0}

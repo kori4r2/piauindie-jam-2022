@@ -3,9 +3,17 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour {
     [SerializeField] private ScenePicker sceneToChange;
+    [SerializeField] private AudioClip newBGM;
 
     public void ChangeScene() {
+        if (newBGM != null)
+            SceneManager.sceneLoaded += PlayNewBGM;
         SceneManager.LoadScene(sceneToChange.Name);
+    }
+
+    private void PlayNewBGM(Scene scene, LoadSceneMode sceneMode) {
+        SoundPlayer.Instance?.PlayBGM(newBGM);
+        SceneManager.sceneLoaded -= PlayNewBGM;
     }
 
     public void ReloadScene() {

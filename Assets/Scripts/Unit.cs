@@ -3,11 +3,12 @@ using UnityEngine.Events;
 using Toblerone.Toolbox;
 
 public abstract class Unit : MonoBehaviour, IDamageable {
-    [SerializeField] UnitAnimation unitAnimation;
     [SerializeField] protected Rigidbody2D rigidBody;
     [SerializeField] protected UnitStats unitStats;
     public UnitStats Stats => unitStats;
     [SerializeField] protected UnitAttack unitAttack;
+    [SerializeField] UnitAnimation unitAnimation;
+    [SerializeField] AudioClip takeDamageSFX;
     [SerializeField] protected BoolEvent gameOverWithVictory;
     protected GenericEventListener<bool> gameOverListener;
     public readonly UnityEvent OnDeath = new UnityEvent();
@@ -18,6 +19,22 @@ public abstract class Unit : MonoBehaviour, IDamageable {
     protected Vector2 movementDirection;
     protected int currentHP;
     protected bool gameIsOver;
+
+    protected virtual void Awake() {
+        currentHP = Stats.MaxHP;
+        movable2D = new Movable2D(rigidBody);
+        movable2D.BlockMovement();
+        unitAttack.Init(this);
+        unitAnimation.Setup(this);
+        OnTakeDamage.AddListener(_ => SoundPlayer.Instance?.PlaySFX(takeDamageSFX));
+        PrepareForGameOver();
+    }
+
+    private void PrepareForGameOver() {
+        gameIsOver = false;
+        gameOverListener = new GenericEventListener<bool>(gameOverWithVictory, OnGameOver);
+        gameOverListener.StartListeningEvent();
+    }
 
     protected virtual void Update() {
         if (gameIsOver)
@@ -45,17 +62,6 @@ public abstract class Unit : MonoBehaviour, IDamageable {
         Vector2 newVelocity = Stats.MoveSpeed * movementDirection;
         movable2D.SetVelocity(newVelocity);
         unitAnimation.Update(newVelocity);
-    }
-
-    protected virtual void Awake() {
-        currentHP = Stats.MaxHP;
-        movable2D = new Movable2D(rigidBody);
-        movable2D.BlockMovement();
-        unitAttack.Init(this);
-        unitAnimation.Setup(this);
-        gameIsOver = false;
-        gameOverListener = new GenericEventListener<bool>(gameOverWithVictory, OnGameOver);
-        gameOverListener.StartListeningEvent();
     }
 
     protected virtual void OnGameOver(bool isVictory) {
