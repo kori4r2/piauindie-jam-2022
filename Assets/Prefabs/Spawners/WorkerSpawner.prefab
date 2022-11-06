@@ -51,4 +51,6 @@ MonoBehaviour:
   respawnCooldown: 2
   firstSpawnDelay: 1
   unitsRuntimeSet: {fileID: 11400000, guid: 189de047803ff4104922ee6d3bb0559a, type: 2}
+  buildingPlaces: {fileID: 11400000, guid: 1df3b06679c5e0a2385ba777b938febc, type: 2}
+  buildingCompleted: {fileID: 11400000, guid: 8107a1d0fedef3c9cb4c1752a38f7d52, type: 2}
   _drawGizmos: 1
