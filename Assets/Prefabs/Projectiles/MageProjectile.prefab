@@ -50,7 +50,7 @@ MonoBehaviour:
   pool: {fileID: 11400000, guid: ead7952765c1b3b42ab90eec1d6c3de6, type: 2}
   destroyOnContact: 1
   impactSFX: {fileID: 0}
-  moveSpeed: 8
+  moveSpeed: 10
 --- !u!50 &6128742577580516929
 Rigidbody2D:
   serializedVersion: 4

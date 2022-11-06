@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69f39488b582f77b28062e07d83b25c0, type: 3}
   m_Name: MageStats
   m_EditorClassIdentifier: 
-  maxHP: 5
+  maxHP: 8
   attackPower: 1
   moveSpeed: 2.75

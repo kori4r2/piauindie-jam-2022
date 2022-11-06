@@ -70,16 +70,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acc2b8e9d1b32a542bbab51599ffaa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  unitAnimation:
-    animator: {fileID: 8605931274352143694}
-    spriteRenderer: {fileID: 8538920112114767748}
-    expectedSpeed: 5
   rigidBody: {fileID: 374585546344121884}
   unitStats: {fileID: 11400000, guid: 21883fd9717516f49b2025064b7ede06, type: 2}
   unitAttack:
     pool: {fileID: 11400000, guid: 5b4be6950111b5546b21800f256f7913, type: 2}
-    attackCooldown: 3
+    attackCooldown: 2
     attackSpawnDistance: 0.5
+    soundFX: {fileID: 0}
+  unitAnimation:
+    animator: {fileID: 8605931274352143694}
+    spriteRenderer: {fileID: 8538920112114767748}
+    expectedSpeed: 5
+  takeDamageSFX: {fileID: 0}
   gameOverWithVictory: {fileID: 11400000, guid: feaaf409eb7e1d2e3be17f38af5531b9, type: 2}
   _aiInput: {fileID: 7222036747931539902}
   _runtimeSet: {fileID: 11400000, guid: 8f9e6fa125de3bd8cbf68bb514333187, type: 2}

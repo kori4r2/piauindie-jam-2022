@@ -19,4 +19,8 @@ public class SceneChanger : MonoBehaviour {
     public void ReloadScene() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void Quit() {
+        Application.Quit();
+    }
 }
