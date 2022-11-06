@@ -74,6 +74,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac92339c4e162d94889752fcfdc337de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathID: 0
   _necessaryEXP: 3
   BuildingPrefab: {fileID: 0}
+  finishedBuildingEvent: {fileID: 11400000, guid: 8107a1d0fedef3c9cb4c1752a38f7d52, type: 2}
+  finishedBuildingSFX: {fileID: 0}
   runtimeSet: {fileID: 11400000, guid: 1df3b06679c5e0a2385ba777b938febc, type: 2}
