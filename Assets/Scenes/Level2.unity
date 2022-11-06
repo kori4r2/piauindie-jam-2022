@@ -318,7 +318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: respawnCooldown
-      value: 5
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8558022439308964587, guid: acbe3cfee69001198aa5c25f02a43a30, type: 3}
       propertyPath: unitsToSpawn.Array.size
@@ -1425,7 +1425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: _necessaryEXP
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -1661,7 +1661,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: _necessaryEXP
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -1840,7 +1840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: _necessaryEXP
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -2263,7 +2263,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: _necessaryEXP
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8810439679455462688, guid: ff8fbdc8650b5c347b9149cb1f7469b9, type: 3}
       propertyPath: BuildingPrefab
@@ -2830,6 +2830,10 @@ PrefabInstance:
     - target: {fileID: 1868792044913119526, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
+      propertyPath: maxUnits
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1868792044913119527, guid: 633973a7c999e0a7aa1128eee5e9c554, type: 3}
       propertyPath: _gizmosColor.a
